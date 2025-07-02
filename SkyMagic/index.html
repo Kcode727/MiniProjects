@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Canvas Effects</title>
+</head>
+<body class="bg-white">
+    <!-- 🔷 Initial Card Section -->
+    <div id="initial" class="w-full min-h-screen overflow-x-hidden">
+        <div class="text-center place-items-center p-6">
+            <h1 class="lg:text-6xl text-5xl font-bold text-center text-gray-800" style="font-family: 'Cinzel', serif;">Wonders of Sky</h1>
+            <p class="text-center lg:text-lg text-md text-gray-600 max-w-3xl" style="font-family: 'Open Sans', sans-serif;">Explore the rare and mesmerizing wonders of the sky!</p>
+        </div>
+        <div class="p-6 rounded-xl border border-white/10 w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-6">
+
+        
+            <!-- Sun Rays -->
+            <div class="bg-gray-200/10 backdrop-blur-sm p-4 rounded-xl border border-gray/10 text-center w-full">
+                <img src="godlight.jpeg" class="h-72 w-full object-cover rounded" />
+                <h1 class="text-gray-700 lg:text-4xl text-3xl mt-2" style="font-family: 'Cinzel', serif;">Crepuscular Rays</h1>
+                <p class="text-gray-500 lg:text-lg text-md  mt-2" style="font-family: 'Open Sans', sans-serif;">Those beautiful sun rays streaming through clouds...
+                <button onclick="showEffect('rays')" class="ml-2 text-gray-600" style="font-family: 'Open Sans', sans-serif;">Know more!</button></p>
+            </div>
+
+            <!-- Rainbow -->
+            <div class="bg-gray-200/10 backdrop-blur-sm p-4 rounded-xl border border-gray/10 text-center w-full">
+                <img src="rainbow.jpeg" class="h-72 w-full object-cover rounded" />
+                <h1 class="text-gray-700 lg:text-4xl text-3xl mt-2" style="font-family: 'Cinzel', serif;">Double Rainbow</h1>
+                <p class="text-gray-500 lg:text-lg text-md  mt-2" style="font-family: 'Open Sans', sans-serif;">When you're lucky enough to see two rainbows, you're seeing...
+                <button onclick="showEffect('rainbow')" class="ml-2 text-gray-600" style="font-family: 'Open Sans', sans-serif;">Know more!</button></p>
+            </div>
+
+            <!-- Fogbow -->
+            <div class="bg-gray-200/10 backdrop-blur-sm p-4 rounded-xl border border-gray/10 text-center w-full">
+                <img src="fogbow.jpeg" class="h-72 w-full object-cover rounded" />
+                <h1 class="text-gray-700 lg:text-4xl text-3xl mt-2" style="font-family: 'Cinzel', serif;">Fogbow</h1>
+                <p class="text-gray-500 lg:text-lg text-md  mt-2" style="font-family: 'Open Sans', sans-serif;">This ghostly white rainbow appears when...
+                <button onclick="showEffect('fog')" class="ml-2 text-gray-600" style="font-family: 'Open Sans', sans-serif;">Know more!</button></p>
+            </div>
+
+            <!-- Halo -->
+            <div class="bg-gray-200/10 backdrop-blur-sm p-4 rounded-xl border border-gray/10 text-center w-full">
+                <img src="halo.jpeg" class="h-72 w-full object-cover rounded" />
+                <h1 class="text-gray-700 lg:text-4xl text-3xl mt-2" style="font-family: 'Cinzel', serif;">Sun Halo</h1>
+                <p class="text-gray-500 lg:text-lg text-md  mt-2" style="font-family: 'Open Sans', sans-serif;">That magical ring around the sun is caused by...
+                <button onclick="showEffect('halo')" class="ml-2 text-gray-600" style="font-family: 'Open Sans', sans-serif;">Know more!</button></p>
+            </div>
+
+            <!-- Circumhorizon Arc -->
+            <div class="bg-gray-200/10 backdrop-blur-sm p-4 rounded-xl border border-gray/10 text-center w-full">
+                <img src="arc.jpeg" class="h-72 w-full object-cover rounded" />
+                <h1 class="text-gray-700 lg:text-4xl text-3xl mt-2" style="font-family: 'Cinzel', serif;">Circumhorizon Arc</h1>
+                <p class="text-gray-500 lg:text-lg text-md mt-2" style="font-family: 'Open Sans', sans-serif;">This rare horizontal rainbow isn't really a rainbow or...
+                <button onclick="showEffect('arc')" class="ml-2 text-gray-600" style="font-family: 'Open Sans', sans-serif;">Know more!</button></p>
+            </div>
+
+            <!-- Aurora -->
+            <div class="bg-gray-200/10 backdrop-blur-sm p-4 rounded-xl border border-gray/10 text-center w-full">
+                <img src="aurora.jpeg" class="h-72 w-full object-cover rounded" />
+                <h1 class="text-gray-700 lg:text-4xl text-3xl mt-2" style="font-family: 'Cinzel', serif;">Aurora</h1>
+                <p class="text-gray-500 lg:text-lg text-md  mt-2" style="font-family: 'Open Sans', sans-serif;">These dancing sky lights are Earth's version of a neon...
+                <button onclick="showEffect('aurora')" class="ml-2 text-gray-600" style="font-family: 'Open Sans', sans-serif;">Know more!</button></p>
+            </div>
+
+            <!-- Light pillars -->
+            <div class="bg-gray-200/10 backdrop-blur-sm p-4 rounded-xl border border-gray/10 text-center w-full">
+                <img src="lightbeams.jpeg" class="h-72 w-full object-cover rounded" />
+                <h1 class="text-gray-700 lg:text-4xl text-3xl mt-2" style="font-family: 'Cinzel', serif;">Light Pillars</h1>
+                <p class="text-gray-500 lg:text-lg text-md  mt-2" style="font-family: 'Open Sans', sans-serif;">These vertical light beams are nature's neon signs, formed when...
+                <button onclick="showEffect('pillars')" class="ml-2 text-gray-600" style="font-family: 'Open Sans', sans-serif;">Know more!</button></p>
+            </div>
+
+            <!-- Squall line -->
+            <div class="bg-gray-200/10 backdrop-blur-sm p-4 rounded-xl border border-gray/10 text-center w-full">
+                <img src="squall.jpeg" class="h-72 w-full object-cover rounded" />
+                <h1 class="text-gray-700 lg:text-4xl text-3xl mt-2" style="font-family: 'Cinzel', serif;">Squall lines</h1>
+                <p class="text-gray-500 lg:text-lg text-md  mt-2" style="font-family: 'Open Sans', sans-serif;">This 'wall of storms' is nature's bowling ball - a fast-moving line of...
+                <button onclick="showEffect('squall')" class="ml-2 text-gray-600" style="font-family: 'Open Sans', sans-serif;">Know more!</button></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔶 Overlay Section -->
+    <div id="overlay" class="hidden fixed inset-0 z-50">
+        <canvas id="canvas" class="bg-black fixed inset-0 z-0"></canvas>
+        <div class="relative h-full w-full z-10 text-center px-4 pt-10 backdrop-blur">
+            <h1 id="overlayTitle" class="text-white lg:text-4xl text-3xl mb-4" style="font-family: 'Cinzel', serif;"></h1>
+            <div class="bg-white/3 backdrop-blur-sm p-4 rounded-xl border border-white/20 w-fit mx-auto mt-6">
+                <p id="overlayDesc" class="text-neutral-300 lg:text-lg text-md leading-relaxed max-w-2xl px-4 sm:px-6 md:px-8 mx-auto text-center whitespace-normal break-words" style="font-family: 'Open Sans', sans-serif;"></p>
+                <button id="back" class="text-white mt-8" style="font-family: 'Open Sans', sans-serif;">Explore More!</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener("resize", resizeCanvas);
+
+        // God Rays
+        function drawRays() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const originX = canvas.width;
+            const originY = 0;
+            const rayLength = canvas.height * 1.5;
+
+            function drawRay(angle, width, opacity) {
+                const endX1 = originX + Math.cos(angle - width / 2) * rayLength;
+                const endY1 = originY + Math.sin(angle - width / 2) * rayLength;
+                const endX2 = originX + Math.cos(angle + width / 2) * rayLength;
+                const endY2 = originY + Math.sin(angle + width / 2) * rayLength;
+
+                const gradient = ctx.createLinearGradient(originX, originY, originX + Math.cos(angle) * rayLength, originY + Math.sin(angle) * rayLength);
+                gradient.addColorStop(0, `rgba(255, 255, 255, ${opacity})`);
+                gradient.addColorStop(1, `rgba(255, 255, 255, 0)`);
+
+                ctx.beginPath();
+                ctx.moveTo(originX, originY);
+                ctx.lineTo(endX1, endY1);
+                ctx.lineTo(endX2, endY2);
+                ctx.closePath();
+                ctx.fillStyle = gradient;
+                ctx.fill();
+            }
+
+            drawRay(Math.PI * 0.65, 0.2, 0.30);
+            drawRay(Math.PI * 0.80, 0.2, 0.30);
+            drawRay(Math.PI * 0.50, 0.2, 0.20);
+            drawRay(Math.PI * 0.95, 0.2, 0.30);
+        }
+
+        // Fog
+        function drawFog() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const centerX = canvas.width / 4;
+            const centerY = canvas.height;  
+            const radius = canvas.width / 2;
+
+            // Base fog arc
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, Math.PI, Math.PI * 2);
+            ctx.strokeStyle = "rgba(200, 200, 200, 0.09)";
+            ctx.lineWidth = 50;
+            ctx.stroke();
+
+            // Outer, softer arc
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, Math.PI, Math.PI * 2);
+            ctx.strokeStyle = "rgba(200, 200, 200, 0.10)";
+            ctx.lineWidth = 100;
+            ctx.stroke();
+
+        }
+
+        // Halo
+        function drawHalo() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = canvas.width / 3;
+
+            // Draw central dot and crosshair
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 2, 0, 2 * Math.PI);
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
+            ctx.lineWidth = 50;
+            ctx.stroke();
+
+            ctx.strokeStyle = "white";
+            ctx.lineWidth = 4;
+            ctx.beginPath();
+            ctx.moveTo(centerX - 50, centerY);
+            ctx.lineTo(centerX + 50, centerY);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY - 50);
+            ctx.lineTo(centerX, centerY + 50);
+            ctx.stroke();
+
+            const baseColors = [
+                'rgba(255, 0, 0, 0.4)',     // red
+                'rgba(255, 255, 0, 0.4)',   // yellow
+                'rgba(255, 255, 255, 0.5)'  // white
+            ];
+
+            const glowAngles = [
+                7 * Math.PI / 9,
+                11 * Math.PI / 9,
+                16 * Math.PI / 9,
+                20 * Math.PI / 9
+            ];
+
+            // Draw arcs
+            baseColors.forEach((color, i) => {
+                for (let j = 0; j < 3; j++) {
+                    const r = radius + (i * 6) + (j * 0.5);
+                    const alpha = 0.25 + j * 0.05;
+                    const strokeColor = color.replace(/[\d.]+\)$/g, `${alpha})`);
+                    const width = color.includes("255, 255, 255") ? 4 : 2;
+
+                    // First segment
+                    ctx.beginPath();
+                    ctx.arc(centerX, centerY, r, glowAngles[0], glowAngles[1]);
+                    ctx.strokeStyle = strokeColor;
+                    ctx.lineWidth = width;
+                    ctx.stroke();
+
+                    // Second segment
+                    ctx.beginPath();
+                    ctx.arc(centerX, centerY, r, glowAngles[2], glowAngles[3]);
+                    ctx.strokeStyle = strokeColor;
+                    ctx.lineWidth = width;
+                    ctx.stroke();
+                }
+            });
+
+            // Add radial wedge glow at arc centerpoints
+            const flareDirections = [
+                (glowAngles[0] + glowAngles[1]) / 2,
+                (glowAngles[2] + glowAngles[3]) / 2
+            ];
+
+            // Outward-pointing conic wedge glow
+            flareDirections.forEach((angle, i) => {
+                const arcEdgeX = centerX + Math.cos(angle) * (radius + 12);  // slightly outside the arc
+                const arcEdgeY = centerY + Math.sin(angle) * (radius + 12);
+                const flareLength = 50;
+                const flareWidth = 0.2; // in radians (~11° total spread)
+                const flareStart = angle - flareWidth;
+                const flareEnd = angle + flareWidth;
+
+                // Coordinates for flare triangle
+                const outer1X = centerX + Math.cos(flareStart) * (radius + flareLength);
+                const outer1Y = centerY + Math.sin(flareStart) * (radius + flareLength);
+
+                const outer2X = centerX + Math.cos(flareEnd) * (radius + flareLength);
+                const outer2Y = centerY + Math.sin(flareEnd) * (radius + flareLength);
+
+                // Gradient for wedge
+                const gradient = ctx.createLinearGradient(arcEdgeX, arcEdgeY, (outer1X + outer2X)/2, (outer1Y + outer2Y)/2);
+                gradient.addColorStop(0, 'rgba(255, 255, 200, 0.25)');
+                gradient.addColorStop(1, 'rgba(255, 255, 200, 0)');
+
+                ctx.beginPath();
+                ctx.moveTo(arcEdgeX, arcEdgeY);       // Tip of the wedge at arc
+                ctx.lineTo(outer1X, outer1Y);         // Left edge
+                ctx.lineTo(outer2X, outer2Y);         // Right edge
+                ctx.closePath();
+                ctx.fillStyle = gradient;
+                ctx.fill();
+            });
+        }
+
+        // Rainbow
+        function drawRainbow() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);   
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height * 0.95;  // Adjusted: Keep base near bottom
+            const radius = canvas.width * 0.5;
+
+            const baseColors = [
+              'rgba(255, 0, 0, 0.6)',     // red
+              'rgba(255, 127, 0, 0.6)',    // orange
+              'rgba(255, 255, 0, 0.6)',    // yellow
+              'rgba(0, 255, 0, 0.6)',      // green
+              'rgba(0, 0, 255, 0.6)',      // blue
+              'rgba(75, 0, 130, 0.6)',     // indigo
+              'rgba(148, 0, 211, 0.6)'     // violet
+            ];
+
+            // Draw each color band 
+            baseColors.forEach((color, i) => {
+                    ctx.beginPath();
+                    ctx.arc(centerX, centerY, radius + (i * 6), Math.PI, Math.PI * 2);
+                    ctx.strokeStyle = color.replace('0.3', `${0.25}`);
+                    ctx.lineWidth = 4;
+                    ctx.stroke();
+            });
+
+            // Draw secondary rainbow 
+            ctx.shadowColor = "rgba(255,255,255,0.05)";
+            ctx.shadowBlur = 30;
+      
+            baseColors.forEach((color, i) => {
+                const fadedColor = color.replace(/0\.6/, "0.12");
+        
+                for (let j = 0; j < 2; j++) {
+                    ctx.beginPath();
+                    ctx.arc(centerX - 100, centerY + 100, radius + (i * 6) - (j * 2), Math.PI, Math.PI * 2);
+                    ctx.strokeStyle = fadedColor.replace('0.12', `${0.1 + (j * 0.02)}`);
+                    ctx.lineWidth = 4;
+                    ctx.stroke();
+                }
+            });
+
+            // Add subtle glow at the base of the rainbow
+            const glowGradient = ctx.createRadialGradient(
+                centerX, centerY - 50, 0,
+                centerX, centerY - 50, radius * 0.6
+            );
+            glowGradient.addColorStop(0, 'rgba(255,255,255,0.05)');
+            glowGradient.addColorStop(1, 'rgba(255,255,255,0)');
+      
+            ctx.fillStyle = glowGradient;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY - 50, radius * 0.6, Math.PI, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // Circumhorizon Arc
+        function drawArc() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+            const colors = [
+              'rgba(255, 0, 0, 0.3)',
+              'rgba(255, 165, 0, 0.3)',
+              'rgba(255, 255, 0, 0.3)',
+              'rgba(0, 255, 0, 0.3)',
+              'rgba(0, 127, 255, 0.3)',
+              'rgba(139, 0, 255, 0.3)',
+              'rgba(255, 0, 255, 0.3)'
+            ];
+
+            let x = 0, y = 200;
+
+            for (let i = 0; i < 7; i++) {
+                // First line (full opacity)
+                ctx.strokeStyle = colors[i];
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                ctx.lineTo(canvas.width - 30, y - 50);
+                ctx.stroke();
+
+                // Second line (reduced opacity)
+                ctx.strokeStyle = colors[i].replace(/rgba\((\d+),\s*(\d+),\s*(\d+),\s*[\d.]+\)/, 'rgba($1,$2,$3,0.4)');
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.moveTo(x - 30, y);
+                ctx.lineTo(x + 630, y - 50);
+                ctx.stroke();
+
+                y = y + 10;
+            }
+        }
+        
+        // Light Pillars
+        function drawPillars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const spacing = 80;
+            const pillarCount = Math.floor(canvas.width / spacing);
+            const baseY = canvas.height;
+            const maxHeight = canvas.height * 0.5;
+
+            const colors = [
+                '57, 255, 20',    // Neon Green
+                '0, 255, 255',    // Cyan / Aqua
+                '255, 20, 147',   // Neon Pink
+                '255, 0, 255',    // Magenta
+                '255, 100, 0'      // Neon Orange-Red
+            ];
+
+            for (let i = 0; i < pillarCount; i++) {
+                const x = spacing * (i + 1);
+                const height = maxHeight * (0.5 + Math.random() * 0.8);
+                const width = 4 + Math.random() * 5;
+                const opacity = 0.90 + Math.random() * 0.2;
+
+                const color = colors[i % colors.length];
+
+                const gradient = ctx.createLinearGradient(x, baseY, x, baseY - height);
+                gradient.addColorStop(0, `rgba(${color}, ${opacity})`);
+                gradient.addColorStop(1, `rgba(${color}, 0)`);
+
+                ctx.fillStyle = gradient;
+
+                // Optional glow
+                ctx.shadowColor = `rgba(${color}, 0.3)`;
+                ctx.shadowBlur = 15;
+
+                ctx.fillRect(x - width / 2, baseY - height, width, height);
+            }
+        }
+
+        // Aurora
+        function drawAurora() {
+            const ribbonCount = 4; // how many layers
+            const baseY = ctx.canvas.height * 0.2;
+            const width = ctx.canvas.width;
+            const height = ctx.canvas.height;
+
+            // Color palette for aurora ribbons
+            const colors = [
+                '0, 255, 180',   // aqua green
+                '0, 200, 255',   // sky blue
+                '255, 0, 255',   // magenta
+            ];
+
+            for (let i = 0; i < ribbonCount; i++) {
+                const amplitude = 6 + Math.random() * 20;
+                const frequency = 0.01 + Math.random() * 0.01;
+                const thickness = -200 + Math.random() * 20;
+                const offset = 11 + Math.random() * 1000;
+                const color = colors[i % colors.length];
+                const alpha = 0.05 + Math.random() * 0.05;
+
+                ctx.beginPath();
+
+                // Top curve
+                for (let x = 0; x <= width; x += 5) {
+                    const y = baseY + i * 19 + Math.sin(x * frequency + offset) * amplitude + x * -0.05;
+                    ctx.lineTo(x, y);
+                }
+
+                // Bottom edge
+                for (let x = width; x >= 0; x -= 5) {
+                    const y = baseY + Math.sin(x * frequency + offset) * amplitude + thickness;
+                    ctx.lineTo(x, y);
+                }
+
+                ctx.closePath();
+
+                // Create vertical gradient from top to bottom of ribbon
+                const gradient = ctx.createLinearGradient(0, baseY, 0, baseY + thickness);
+                gradient.addColorStop(0, `rgba(${color}, ${alpha})`);
+                gradient.addColorStop(1, `rgba(${color}, 0)`);
+
+                ctx.fillStyle = gradient;
+
+                // Optional glow
+                ctx.shadowColor = `rgba(${color}, 0.2)`;
+                ctx.shadowBlur = 25;
+
+                ctx.fill();
+            }
+        }
+
+        // Squall lines
+        function drawSquall() {
+            const ribbonCount = 4;
+            const width = ctx.canvas.width;
+            const height = ctx.canvas.height;
+            const baseY = height * 0.05;
+            const tilt = -0.05;
+
+            const color = '200, 200, 200'; 
+
+            for (let i = 0; i < ribbonCount; i++) {
+                const amplitude = 6 + Math.random() * 20;
+                const frequency = 0.01 + Math.random() * 0.01;
+                const thickness = 200 + Math.random() * 40; 
+                const offset = Math.random() * 1000;
+                const alpha = 0.1 + Math.random() * 0.05;
+                const verticalOffset = baseY + i * 25; // stagger layers vertically
+
+                ctx.beginPath();
+
+                // Top edge of ribbon (left to right)
+                for (let x = 0; x <= width; x += 5) {
+                    const y = verticalOffset + Math.sin(x * frequency + offset) * amplitude + x * tilt;
+                    ctx.lineTo(x, y);
+                }
+
+                // Bottom edge of ribbon (right to left)
+                for (let x = width; x >= 0; x -= 5) {
+                    const y = verticalOffset + Math.sin(x * frequency + offset) * amplitude + x * tilt + thickness;
+                    ctx.lineTo(x, y);
+                }
+
+                ctx.closePath();
+
+                // Gradient from top to bottom of squall layer
+                const gradient = ctx.createLinearGradient(0, verticalOffset, 0, verticalOffset + thickness);
+                gradient.addColorStop(0, `rgba(${color}, ${alpha})`);
+                gradient.addColorStop(1, `rgba(${color}, 0)`);
+
+                ctx.fillStyle = gradient;
+
+                // Optional soft glow/haze
+                ctx.shadowColor = `rgba(${color}, 0.2)`;
+                ctx.shadowBlur = 25;
+
+                ctx.fill();
+            }
+
+        }
+
+
+        function drawEffect(effect) {
+            resizeCanvas();
+            if (effect === "rays") drawRays();
+            else if (effect === "fog") drawFog();
+            else if (effect === "halo") drawHalo();
+            else if (effect === "arc") drawArc();
+            else if (effect === "rainbow") drawRainbow();
+            else if (effect === "pillars") drawPillars();
+            else if (effect === "aurora") drawAurora();
+            else if (effect === "squall") drawSquall();
+        }
+
+        // Know More buttons
+        function showEffect(effect) {
+            const effectContent = {
+                rays: {
+                  title: "Crepuscular Rays (Sunbeams)",
+                  description: "Those beautiful sun rays streaming through clouds aren't actually spreading out - they're parallel like laser beams! We see them fan out because of perspective, like how train tracks appear to converge. They happen when sunlight sneaks through cloud gaps or mountain passes, lighting up dust and moisture in the air. At sunrise/sunset, the longer path through atmosphere scatters blue light away, leaving stunning golden rays. Sometimes you can spot their opposite version (anticrepuscular rays) converging on the horizon opposite the sun. Volcanic ash or pollution makes them extra vivid by adding more light-scattering particles. Sailors once called them 'Jacob's Ladder,' believing they were paths to heaven.",
+                },
+                rainbow: {
+                  title: "Double Rainbow",
+                  description: "When you're lucky enough to see two rainbows, you're seeing sunlight bounce twice inside raindrops! The brighter primary rainbow shows normal colors (red outside), while the fainter secondary has reversed colors from the extra reflection. Between them lies Alexander's dark band where no light reaches your eyes - nature's version of negative space. Bigger, uniform raindrops create the most vivid displays. The secondary rainbow is always about 9° higher in the sky. Next time you see one, notice how the sky between the bows looks darker than the rest - that's physics in action!",
+                },
+                aurora: {
+                  title: "Northern lights (Aurora)",
+                  description: "These dancing sky lights are Earth's version of a neon sign! Charged particles from the sun ride our planet's magnetic field to the poles, where they excite oxygen (green/red) and nitrogen (blue/purple). The shapes flicker because they're following invisible magnetic field lines. During strong solar storms, they can be seen far from the poles - sometimes even near the equator! The different colors come from different altitudes: green (100-240km up), red (higher), and blue/purple (lower). Ancient cultures had wild explanations - Vikings thought they were armor of warrior spirits, while some Inuit believed they were ancestors playing ball with a walrus skull!",
+                },
+                arc: {
+                  title: "Circumhorizon Arc (Fire Rainbow)",
+                  description: "This rare horizontal rainbow isn't really a rainbow or fire - it's sunlight shining through ice crystal clouds! The sun must be higher than 58° (so never visible in winter mornings/evenings). Plate-shaped ice crystals act like countless tiny prisms, spreading light into this spectacular color band. Unlike normal rainbows, its colors are always in perfect spectral order with red on top. You'll only see it when cirrus clouds contain perfectly aligned crystals - nature's precision light show. It's impossible to see north of 55° latitude because the sun never gets high enough there. Some pilots report seeing it stretch over 500 miles!",
+                },
+                fog: {
+                  title: "Fogbow",
+                  description: "This ghostly white rainbow appears when sunlight hits tiny fog droplets instead of raindrops. The droplets are so small (0.05mm) that colors overlap into a pale white arch with reddish edges. They're much wider than rainbows - sometimes spanning 180°! If you're lucky, you might see your shadow in the center surrounded by a glory (colored rings). Mountain climbers often spot them when clouds envelop them, and pilots see them projected onto clouds below. Fogbows inspired many sea legends about phantom ships and portals to other worlds because of their eerie appearance in ocean mists.",
+                },
+                halo: {
+                  title: "Sun Halo",
+                  description: "That magical ring around the sun is caused by millions of ice crystals high up in cirrus clouds. Each crystal acts like a tiny prism bending sunlight 22°. These halos often signal approaching storms since the thin clouds precede weather systems. Sometimes you'll see bright spots on either side called sun dogs (mock suns) that glitter like diamonds. Ancient cultures worldwide interpreted them as divine signs - Norse saw them as Odin's eyes, while Chinese lore considered them celestial dragons. Next time you see one, try blocking the sun with your hand to spot the full circle!",
+                },
+                pillars: {
+                  title: "Light Pillars",
+                  description: "These vertical light beams are nature's neon signs, formed when light reflects off flat ice crystals floating in very cold air. They can appear above streetlights (looking like light sabers) or below the sun/moon. The crystals must be aligned horizontally to mirror the light sources. Taller pillars mean more ice crystals in the air - sometimes reaching miles high! They're most common in polar regions but appear anywhere when temperatures drop below -20°C (-4°F). Some winter festivals in cold countries now intentionally create them with powerful spotlights for magical displays!",
+                },
+                squall: {
+                  title: "Squall Line",
+                  description: "This 'wall of storms' is nature's bowling ball - a fast-moving line of thunderstorms that can knock down everything in its path. As cold air plows into warm air, it creates a rolling wave of destruction with winds over 60 mph. You'll first see a dark, low-hanging shelf cloud - like a menacing eyebrow in the sky. The sudden wind burst is called a 'gust front' - it can hit with hurricane force before the rain even arrives! While they rarely spawn tornadoes, their straight-line winds can flatten forests and flip trucks. After passing, they leave dramatically cooler air - temperature can drop 20°F in minutes! Pilots detour hundreds of miles to avoid these storms, which can stretch from Canada to Mexico.",
+                },
+            };
+
+            // Set canvas and draw the effect
+            resizeCanvas();
+            drawEffect(effect);
+
+            // Show/hide sections
+            document.getElementById("overlay").classList.remove("hidden");
+            document.getElementById("initial").classList.add("hidden");
+
+            // Set overlay content
+            const content = effectContent[effect];
+            if (content) {
+                document.getElementById("overlayTitle").innerText = content.title;
+                document.getElementById("overlayDesc").innerText = content.description;
+            }
+        }
+
+        // Back Button
+        document.getElementById("back").addEventListener("click", () => {
+            document.getElementById("overlay").classList.add("hidden");
+            document.getElementById("initial").classList.remove("hidden");
+        });
+    </script>
+</body>
+</html>
