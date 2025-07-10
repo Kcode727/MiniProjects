@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NASA Picture of the Day</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <h1 class="text-4xl font-bold text-center text-neutral-900 p-6">
+    NASA Astronomy Picture of the Day
+  </h1>
+
+  <!-- Search Form -->
+  <div class="flex justify-center p-4">
+    <form id="searchForm" class="flex flex-col sm:flex-row gap-2 items-center">
+      <input
+        type="date"
+        id="date"
+        name="date"
+        required
+        class="border border-gray-400 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      />
+      <button
+        type="submit"
+        class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+      >
+        Search
+      </button>
+    </form>
+  </div>
+
+  <!-- Result Container -->
+  <div class="flex justify-center px-4">
+    <div id="api" class="w-full max-w-6xl"></div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    const container = document.getElementById("api");
+
+    async function getByDate(date) {
+      container.innerHTML = "<p class='text-center text-lg'>Loading...</p>";
+      try {
+        const response = await fetch(`/api/nasa?date=${date}`);
+        const data = await response.json();
+
+        if (data.code || data.error) {
+          container.innerHTML = `<p class="text-red-600 text-center">Error: ${data.msg || data.error.message}</p>`;
+          return;
+        }
+
+        container.innerHTML = `
+          <div class="border border-gray-300 rounded-lg p-6 bg-white shadow-md">
+            <div class="flex flex-col md:flex-row gap-6">
+              
+              <!-- Left: Image or Video -->
+              <div class="md:w-1/2 w-full">
+                ${data.media_type === "image"
+                  ? `<img src="${data.url}" alt="${data.title}" class="rounded-lg w-full max-h-[500px] object-contain"/>`
+                  : `<iframe class="w-full aspect-video rounded-lg" src="${data.url}" frameborder="0" allowfullscreen></iframe>`}
+              </div>
+
+              <!-- Right: Text Info -->
+              <div class="md:w-1/2 w-full">
+                <h2 class="text-3xl font-bold mb-4 text-center md:text-left">${data.title}</h2>
+                <p class="text-lg mb-2"><strong>Date:</strong> ${data.date}</p>
+                <p class="text-gray-700 leading-relaxed">${data.explanation}</p>
+              </div>
+
+            </div>
+          </div>
+        `;
+      } catch (error) {
+        container.innerHTML = `<p class="text-red-600 text-center">Error fetching data.</p>`;
+        console.error(error);
+      }
+    }
+
+    // Handle form
+    document.getElementById("searchForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const date = document.getElementById("date").value;
+      if (date) {
+        getByDate(date).then(() => {
+          container.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+    });
+
+    // Load today's image
+    const today = new Date().toISOString().split("T")[0];
+    document.getElementById("date").value = today;
+    getByDate(today);
+  </script>
+</body>
+</html>
