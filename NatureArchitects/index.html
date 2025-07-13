@@ -256,8 +256,8 @@
 
   const leafCountX = 8; // number of leaves horizontally
 const leafCountY = 6; // number of leaves vertically
-const xSpacing = canvas.width / (leafCountX - 6);
-const ySpacing = canvas.height / (leafCountY -4);
+const xSpacing = canvas.width / (leafCountX + 4);
+const ySpacing = canvas.height / (leafCountY + 2);
 
 for (let i = 1; i <= leafCountX; i++) {
   for (let j = 1; j <= leafCountY; j++) {
